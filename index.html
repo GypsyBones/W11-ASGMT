@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W11 ASGMT</title>
-</head>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 <body>
-    
+    <div id="title"><br><br>
+        <h1>Tic Tac Toe</h1>
+        <p id="info">Click on box to start</p> 
+    </div><br><br>
+    <div class="board">
+        <div class="row">
+            <div id="a1" cellIndex="0" class="cell"></div>
+            <div id="a2" cellIndex="1" class="cell"></div>
+            <div id="a3" cellIndex="2" class="cell"></div>
+        </div>
+        <div class="row">
+            <div id="b1" cellIndex="3" class="cell"></div>
+            <div id="b2" cellIndex="4" class="cell"></div>
+            <div id="b3" cellIndex="5" class="cell"></div>
+        </div>
+        <div class="row">
+            <div id="c1" cellIndex="6" class="cell"></div>
+            <div id="c2" cellIndex="7" class="cell"></div>
+            <div id="c3" cellIndex="8" class="cell"></div>
+        </div>
+    </div><br><br>
+
+    <div>
+        <h2 id="statusText"></h2> <br><br>
+        <button id="restartButton"> RESET </button>
+    </div>
+         
+
+  
+
+
+    <script src="index.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.js"></script>
 </body>
 </html>
