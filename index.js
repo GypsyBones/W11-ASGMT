@@ -19,6 +19,8 @@ options is an array of placeholders, an empty string for each cell
 let currentPlayer = "X";
 let running = false;
 
+
+
 startGame()
 
 function startGame() {
@@ -89,7 +91,8 @@ function checkWinner() {
     }
 
     if (roundWon){
-        statusText.textContent = `${currentPlayer} wins!`
+        let winnerAlert = `<div id="alert" class="alert alert-primary" role="alert">${currentPlayer} Won!</div>`
+        statusText.insertAdjacentHTML("beforebegin", winnerAlert)
         running = false;
     } else if (!options.includes("")) {
         statusText.textContent = `Draw!`;
@@ -106,11 +109,28 @@ flips the boolean variable roundWon to true, which then triggers the if-else sta
 stops the game and returns the player that won to the statusText block
 */
 
+function removeAlert() {
+    let parent = document.getElementById("last")
+    let child = document.getElementById("alert")
+    if (child != null) {
+        parent.removeChild(child)
+    } else {
+        return;
+    }
+}
+/*
+function to remove the alert that was created by the winnerAlert
+used the removeChild funtion on the parent that was ID'd in the variable that was created
+In case the game was to be reset before it was finished, I included an if statement to check
+if the alert even existed before trying to delete it
+*/
+
 function restartGame() {
     currentPlayer = "X"
     options = ["", "", "", "", "", "", "", "", ""];
     statusText.textContent = `${currentPlayer}'s turn`;
     cells.forEach(cell => cell.textContent = "")
+    removeAlert()
     running = true;
 }
 /*
